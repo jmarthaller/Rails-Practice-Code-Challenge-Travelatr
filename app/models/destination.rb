@@ -9,7 +9,7 @@ class Destination < ApplicationRecord
         total_age  = 0
         blogger_array = []
         self.posts.each do |post|
-            blogger_array << post.blogger 
+            blogger_array << post.blogger if !blogger_array.includes(post.blogger)
 
         end 
         blogger_array.each do |blogger|
